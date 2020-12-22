@@ -12,6 +12,11 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { From1Component } from './from1/from1.component';
+import { From2Component } from './from2/from2.component';
+import { ParentChildComponent } from './parent-child/parent-child.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    ParentComponent,
+    ChildComponent,
+    From1Component,
+    From2Component,
+    ParentChildComponent
   ],
   imports: [
     BrowserModule,
