@@ -17,6 +17,7 @@ import { ChildComponent } from './child/child.component';
 import { From1Component } from './from1/from1.component';
 import { From2Component } from './from2/from2.component';
 import { ParentChildComponent } from './parent-child/parent-child.component';
+import { HeroForm1Component } from './hero-form1/hero-form1.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ParentChildComponent } from './parent-child/parent-child.component';
     ChildComponent,
     From1Component,
     From2Component,
-    ParentChildComponent
+    ParentChildComponent,
+    HeroForm1Component
   ],
   imports: [
     BrowserModule,
