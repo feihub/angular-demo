@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-from2',
-  templateUrl: './from2.component.html',
-  styleUrls: ['./from2.component.css']
+  selector: 'app-hero-form3',
+  templateUrl: './hero-form3.component.html',
+  styleUrls: ['./hero-form3.component.css']
 })
-export class From2Component implements OnInit {
+export class HeroForm3Component implements OnInit {
 
   profileForm = this.fb.group({
     firstName: ['', Validators.required],
@@ -18,6 +19,9 @@ export class From2Component implements OnInit {
       state: [''],
       zip: ['']
     }),
+    aliases: this.fb.array([
+      this.fb.control('')
+    ])
   });
 
   constructor(private fb: FormBuilder) { }
@@ -25,18 +29,12 @@ export class From2Component implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
   }
 
-  updateProfile() {
-    this.profileForm.patchValue({
-      firstName: 'Nancy',
-      address: {
-        street: '123 Drew Street'
-      }
-    });
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
   }
 
 }

@@ -18,6 +18,8 @@ import { From1Component } from './from1/from1.component';
 import { From2Component } from './from2/from2.component';
 import { ParentChildComponent } from './parent-child/parent-child.component';
 import { HeroForm1Component } from './hero-form1/hero-form1.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HeroForm3Component } from './hero-form3/hero-form3.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +34,14 @@ import { HeroForm1Component } from './hero-form1/hero-form1.component';
     From1Component,
     From2Component,
     ParentChildComponent,
-    HeroForm1Component
+    HeroForm1Component,
+    HeroForm3Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }

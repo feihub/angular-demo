@@ -35,7 +35,7 @@
       </div>
   
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
-
+      <div>
     <p>
         <button (click)="updateProfile()">Update Profile</button>
       </p>
@@ -43,4 +43,18 @@
       <p>
         Form Status: {{ profileForm.status }}
       </p>
+    </div>
+
+      <div formArrayName="aliases">
+        <h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>
+      
+        <div *ngFor="let alias of aliases.controls; let i=index">
+          <!-- The repeated alias template -->
+          <label>
+            Alias:
+            <input type="text" [formControlName]="i">
+          </label>
+        </div>
+    </div>
+
   </form>
